@@ -1,13 +1,5 @@
 import numpy as np
-
-
-def describe(x):
-    print(x)
-    print(x.ndim)  # get dimensions
-    print(x.shape)  # get shape of matrix
-    print(x.dtype)  # get datatype
-    print(x.itemsize) # get itemsize
-    print()
+from description_utils import describe
 
 
 if __name__ == '__main__':
