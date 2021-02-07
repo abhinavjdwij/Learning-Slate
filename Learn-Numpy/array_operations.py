@@ -10,3 +10,7 @@ if __name__ == '__main__':
     print(a[1, :])
     # Get a column
     print(a[:, 2])
+    # Steps work same as python
+    # All alternative elements in second row
+    print(a[1, :][::2])
+    # , works with n-dimensional arrays
