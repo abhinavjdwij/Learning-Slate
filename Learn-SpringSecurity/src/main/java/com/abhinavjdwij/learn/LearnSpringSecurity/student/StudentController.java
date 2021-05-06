@@ -26,4 +26,10 @@ public class StudentController {
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Student " + studentId + " does not exist"));
     }
+
+    /* white listed api */
+    @GetMapping(path = "/public/hello")
+    public String getHello() {
+        return "Hello, World!";
+    }
 }
