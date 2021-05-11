@@ -27,10 +27,10 @@ Drawback: Basic Auth requires username / password for each request, no login / l
 @Configuration
 @EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Qualifier("CustomPasswordEncoder")
     private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public ApplicationSecurityConfig(@Qualifier("CustomPasswordEncoder") PasswordEncoder passwordEncoder) {
+    public ApplicationSecurityConfig(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -48,10 +48,16 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Bean
     protected UserDetailsService userDetailsService() {
-        UserDetails userPrimary = User.builder()
+        UserDetails abhinavUser = User.builder()
                 .username("abhinav")
                 .password(passwordEncoder.encode("password"))
                 .roles("STUDENT").build();
-        return new InMemoryUserDetailsManager(userPrimary);
+
+        UserDetails adminUser = User.builder()
+                .username("admin_local")
+                .password(passwordEncoder.encode("admin_pass"))
+                .roles("ADMIN").build();
+
+        return new InMemoryUserDetailsManager(abhinavUser, adminUser);
     }
 }
