@@ -1,4 +1,4 @@
-package com.abhinavjdwij.learn.imperative.optionals;
+package com.abhinavjdwij.learn.optionals;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.abhinavjdwij.learn.imperative.functionalinterface;
+package com.abhinavjdwij.learn.functionalinterface;
 
 import java.util.List;
 import java.util.function.Supplier;

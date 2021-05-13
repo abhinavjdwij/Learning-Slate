@@ -1,11 +1,9 @@
-package com.abhinavjdwij.learn.imperative.functionalinterface;
-
-import com.abhinavjdwij.learn.imperative.Main;
+package com.abhinavjdwij.learn.functionalinterface;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.abhinavjdwij.learn.imperative.functionalinterface._Stream.Gender.*;
+import static com.abhinavjdwij.learn.functionalinterface._Stream.Gender.*;
 
 public class _Stream {
     public static void main(String[] args) {
