@@ -5,11 +5,6 @@ package com.abhinavjdwij.learn.java.concurrency;
 */
 
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ParallelCallsDemo {
 
@@ -19,9 +14,7 @@ public class ParallelCallsDemo {
         // Using simple Threads -> return value not available in main method
         System.out.println("Using simple Threads");
         delays.forEach((delay) -> {
-            Thread t = new Thread(() -> {
-                new MockClient().mockExternalCall(delay);
-            });
+            Thread t = new Thread(() -> new MockClient().mockExternalCall(delay));
             t.start();
         });
         System.out.println();
