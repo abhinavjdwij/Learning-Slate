@@ -18,13 +18,12 @@ public class SynchronizationDemo {
     public static void main(String[] args) {
         Runnable r = () -> System.out.println("Counter :: " + incrementAndGetId()
                 + " Thread name :: " + Thread.currentThread().getName());
-        List<Thread> threads = List.of(
+        List.of(
                 new Thread(r, "T1"),
                 new Thread(r, "T2"),
                 new Thread(r, "T3"),
                 new Thread(r, "T4"),
                 new Thread(r, "T5")
-        );
-        threads.forEach(Thread::start);
+        ).forEach(Thread::start);
     }
 }
